@@ -2,6 +2,10 @@
 
 export DEBIAN_FRONTEND=noninteractive
 
+echo "================ Installing locales ======================="
+apt-get clean && apt-get update
+apt-get install locales
+
 dpkg-divert --local --rename --add /sbin/initctl
 locale-gen en_US en_US.UTF-8
 dpkg-reconfigure locales
