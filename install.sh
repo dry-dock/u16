@@ -4,7 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 echo "================ Installing locales ======================="
 apt-get clean && apt-get update
-apt-get install locales
+apt-get install locales=2.23-0ubuntu7
 
 dpkg-divert --local --rename --add /sbin/initctl
 locale-gen en_US en_US.UTF-8
@@ -25,44 +25,44 @@ touch "$HOME/.ssh/known_hosts"
 
 echo "================= Installing basic packages ==================="
 apt-get install -y \
-  build-essential \
-  curl \
-  gcc \
-  gettext \
-  htop \
-  libxml2-dev \
-  libxslt-dev \
-  make \
-  nano \
-  openssh-client \
-  openssl \
-  software-properties-common \
-  sudo  \
-  texinfo \
-  unzip \
-  wget
+  build-essential=12.1ubuntu2 \
+  curl=7.47.0-1ubuntu2.2 \
+  gcc=4:5.3.1-1ubuntu1 \
+  gettext=0.19.7-2ubuntu3 \
+  htop=2.0.1-1ubuntu1 \
+  libxml2-dev=2.9.3+dfsg1-1ubuntu0.2 \
+  libxslt1-dev=1.1.28-2.1ubuntu0.1 \
+  make=4.1-6 \
+  nano=2.5.3-2ubuntu2 \
+  openssh-client=1:7.2p2-4ubuntu2.1 \
+  openssl=1.0.2g-1ubuntu4.6 \
+  software-properties-common=0.96.20.7 \
+  sudo=1.8.16-0ubuntu1.3  \
+  texinfo=6.1.0.dfsg.1-5 \
+  unzip=6.0-20ubuntu1 \
+  wget=1.17.1-1ubuntu1.1 \
+  rsync=3.1.1-3ubuntu1
 
 echo "================= Installing Python packages ==================="
 apt-get install -y \
-  python-pip \
-  python-software-properties \
-  software-properties-common \
-  python-dev
+  python-pip=8.1.1-2ubuntu0.4 \
+  python-software-properties=0.96.20.7 \
+  python-dev=2.7.11-1
 
 pip install virtualenv
 
 echo "================= Installing Git ==================="
 add-apt-repository ppa:git-core/ppa -y
 apt-get update
-apt-get install -y git
+apt-get install -y git=1:2.13.0-0ppa1~ubuntu16.04.1
 
 echo "================= Installing Git LFS ==================="
 curl -sS https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-sudo apt-get install git-lfs
+sudo apt-get install git-lfs=2.0.1
 git lfs install
 
 echo "================= Adding JQ 1.5.1 ==================="
-apt-get install jq
+apt-get install jq=1.5+dfsg-1
 
 echo "================= Installing Node 7.x ==================="
 . /u16/node/install.sh
@@ -77,7 +77,7 @@ echo "================= Adding gcloud ============"
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
 curl -sS https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-sudo apt-get update && sudo apt-get install google-cloud-sdk
+sudo apt-get update && sudo apt-get install google-cloud-sdk=155.0.0-0
 
 echo "================= Adding kubectl 1.5.1 ==================="
 curl -sSLO https://storage.googleapis.com/kubernetes-release/release/v1.5.1/bin/linux/amd64/kubectl
@@ -94,7 +94,7 @@ echo "================ Adding azure-cli 2.0 =============="
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
   sudo tee /etc/apt/sources.list.d/azure-cli.list
 sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
-sudo apt-get install apt-transport-https
+sudo apt-get install apt-transport-https=1.2.20
 sudo apt-get update && sudo apt-get install azure-cli=0.2.8-1
 
 echo "================= Adding doctl 1.6.0 ============"
