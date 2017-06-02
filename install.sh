@@ -37,7 +37,7 @@ apt-get install -y \
   openssh-client=1:7.2p2-4ubuntu2.1 \
   openssl=1.0.2g-1ubuntu4.6 \
   software-properties-common=0.96.20.7 \
-  sudo=1.8.16-0ubuntu1.3  \
+  sudo=1.8.16-0ubuntu1.4  \
   texinfo=6.1.0.dfsg.1-5 \
   unzip=6.0-20ubuntu1 \
   wget=1.17.1-1ubuntu1.1 \
@@ -77,7 +77,7 @@ echo "================= Adding gcloud ============"
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
 curl -sS https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-sudo apt-get update && sudo apt-get install google-cloud-sdk=156.0.0-0
+sudo apt-get update && sudo apt-get install google-cloud-sdk=157.0.0-0
 
 echo "================= Adding kubectl 1.5.1 ==================="
 curl -sSLO https://storage.googleapis.com/kubernetes-release/release/v1.5.1/bin/linux/amd64/kubectl
