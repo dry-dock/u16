@@ -4,7 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 echo "================ Installing locales ======================="
 apt-get clean && apt-get update
-apt-get install locales=2.23-0ubuntu7
+apt-get install locales=2.23-0ubuntu9
 
 dpkg-divert --local --rename --add /sbin/initctl
 locale-gen en_US en_US.UTF-8
@@ -41,7 +41,8 @@ apt-get install -y \
   texinfo=6.1.0.dfsg.1-5 \
   unzip=6.0-20ubuntu1 \
   wget=1.17.1-1ubuntu1.1 \
-  rsync=3.1.1-3ubuntu1
+  rsync=3.1.1-3ubuntu1 \
+  psmisc=22.21-2.1build1
 
 echo "================= Installing Python packages ==================="
 apt-get install -y \
@@ -77,7 +78,7 @@ echo "================= Adding gcloud ============"
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
 curl -sS https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-sudo apt-get update && sudo apt-get install google-cloud-sdk=157.0.0-0
+sudo apt-get update && sudo apt-get install google-cloud-sdk=160.0.0-0
 
 echo "================= Adding kubectl 1.5.1 ==================="
 curl -sSLO https://storage.googleapis.com/kubernetes-release/release/v1.5.1/bin/linux/amd64/kubectl
