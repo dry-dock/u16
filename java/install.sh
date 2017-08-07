@@ -7,7 +7,7 @@ apt-get install default-jdk=2:1.8-56ubuntu2
 echo "================= Installing openjdk-8-jdk ==================="
 add-apt-repository -y ppa:openjdk-r/ppa
 apt-get update
-apt-get install -y openjdk-8-jdk=8u131-b11-0ubuntu1.16.04.2
+apt-get install -y openjdk-8-jdk=8u141-b15-3~14.04
 update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
 add-apt-repository ppa:maarten-fonville/ppa
@@ -19,7 +19,7 @@ echo "================ Installing oracle-java8-installer ================="
 echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
 add-apt-repository -y ppa:webupd8team/java
 apt-get update
-apt-get install -y oracle-java8-installer=8u131-1~webupd8~2
+apt-get install -y oracle-java8-installer=8u144-1~webupd8~0
 update-alternatives --set java /usr/lib/jvm/java-8-oracle/jre/bin/java
 update-alternatives --set javac /usr/lib/jvm/java-8-oracle/bin/javac
 update-alternatives --set javaws /usr/lib/jvm/java-8-oracle/jre/bin/javaws
