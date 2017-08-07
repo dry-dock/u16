@@ -42,7 +42,8 @@ apt-get install -y \
   unzip=6.0-20ubuntu1 \
   wget=1.17.1-1ubuntu1.1 \
   rsync=3.1.1-3ubuntu1 \
-  psmisc=22.21-2.1build1
+  psmisc=22.21-2.1build1 \
+  vim=2:7.4.1689-3ubuntu1.2
 
 echo "================= Installing Python packages ==================="
 apt-get install -y \
