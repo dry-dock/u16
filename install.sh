@@ -30,7 +30,7 @@ apt-get install -y \
   gcc=4:5.3.1-1ubuntu1 \
   gettext=0.19.7-2ubuntu3 \
   htop=2.0.1-1ubuntu1 \
-  libxml2-dev=2.9.3+dfsg1-1ubuntu0.2 \
+  libxml2-dev=2.9.3+dfsg1-1ubuntu0.3 \
   libxslt1-dev=1.1.28-2.1ubuntu0.1 \
   make=4.1-6 \
   nano=2.5.3-2ubuntu2 \
