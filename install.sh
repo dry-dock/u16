@@ -51,7 +51,7 @@ apt-get install -y \
   python-software-properties=0.96.20.7 \
   python-dev=2.7.11-1
 
-pip install virtualenv
+pip install virtualenv==15.1.0
 
 echo "================= Installing Git ==================="
 add-apt-repository ppa:git-core/ppa -y
