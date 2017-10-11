@@ -129,7 +129,7 @@ sudo pip install 'azure==2.0.0'
 echo "================ Adding dopy 0.3.7a ======================="
 sudo pip install 'dopy==0.3.7a'
 
-export TF_VERSION=0.10.7
+export TF_VERSION=0.8.7
 echo "================ Adding terraform- $TF_VERSION  ===================="
 export TF_FILE=terraform_"$TF_VERSION"_linux_amd64.zip
 
