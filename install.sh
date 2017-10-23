@@ -52,6 +52,7 @@ apt-get install -y \
   python-dev=2.7.11-1
 
 pip install virtualenv==15.1.0
+pip install pyOpenSSL==16.2.0
 
 echo "================= Installing Git ==================="
 add-apt-repository ppa:git-core/ppa -y
@@ -72,7 +73,7 @@ echo "================= Installing Node 7.x ==================="
 echo "================= Installing Java 1.8.0 ==================="
 . /u16/java/install.sh
 
-echo "================= Installing Ruby 2.3.3  ==================="
+echo "================= Installing Ruby 2.3.5  ==================="
 . /u16/ruby/install.sh
 
 
