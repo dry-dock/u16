@@ -26,7 +26,7 @@ touch "$HOME/.ssh/known_hosts"
 echo "================= Installing basic packages ==================="
 apt-get install -y \
   build-essential=12.1ubuntu2 \
-  curl=7.47.0-1ubuntu2.3 \
+  curl=7.47.0-1ubuntu2.4 \
   gcc=4:5.3.1-1ubuntu1 \
   gettext=0.19.7-2ubuntu3 \
   htop=2.0.1-1ubuntu1 \
