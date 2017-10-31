@@ -40,7 +40,7 @@ apt-get install -y \
   sudo=1.8.16-0ubuntu1.4  \
   texinfo=6.1.0.dfsg.1-5 \
   unzip=6.0-20ubuntu1 \
-  wget=1.17.1-1ubuntu1.1 \
+  wget=1.17.1-1ubuntu1.3 \
   rsync=3.1.1-3ubuntu1 \
   psmisc=22.21-2.1build1 \
   vim=2:7.4.1689-3ubuntu1.2
