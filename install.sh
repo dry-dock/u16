@@ -26,7 +26,7 @@ touch "$HOME/.ssh/known_hosts"
 echo "================= Installing basic packages ==================="
 apt-get install -y \
   build-essential=12.1ubuntu2 \
-  curl=7.47.0-1ubuntu2.4 \
+  curl=7.47.0-1ubuntu2.5 \
   gcc=4:5.3.1-1ubuntu1 \
   gettext=0.19.7-2ubuntu3 \
   htop=2.0.1-1ubuntu1 \
@@ -35,7 +35,7 @@ apt-get install -y \
   make=4.1-6 \
   nano=2.5.3-2ubuntu2 \
   openssh-client=1:7.2p2-4ubuntu2.1 \
-  openssl=1.0.2g-1ubuntu4.6 \
+  openssl=1.0.2g-1ubuntu4.9 \
   software-properties-common=0.96.20.7 \
   sudo=1.8.16-0ubuntu1.4  \
   texinfo=6.1.0.dfsg.1-5 \
@@ -57,7 +57,7 @@ pip install pyOpenSSL==16.2.0
 echo "================= Installing Git ==================="
 add-apt-repository ppa:git-core/ppa -y
 apt-get update
-apt-get install -y git=1:2.14.2-1~ppa0~ubuntu16.04.1
+apt-get install -y git=1:2.15.0-1~ppa0~ubuntu16.04.1
 
 echo "================= Installing Git LFS ==================="
 curl -sS https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
@@ -164,9 +164,9 @@ echo "-----------------------------------"
 
 echo "================= Intalling Shippable CLIs ================="
 
-git clone https://github.com/Shippable/node.git
-./node/shipctl/Ubuntu_16.04/install.sh
-rm -rf node
+git clone https://github.com/Shippable/node.git nodeRepo
+./nodeRepo/shipctl/Ubuntu_16.04/install.sh
+rm -rf nodeRepo
 
 echo "Installed Shippable CLIs successfully"
 echo "-------------------------------------"
