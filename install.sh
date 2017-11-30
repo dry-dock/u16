@@ -163,23 +163,10 @@ echo "Added packer successfully"
 echo "-----------------------------------"
 
 echo "================= Intalling Shippable CLIs ================="
-echo "Installing shippable_decrypt"
-cp /u16/shippable_decrypt /usr/local/bin/shippable_decrypt
 
-echo "Installing shippable_retry"
-cp /u16/shippable_retry /usr/local/bin/shippable_retry
-
-echo "Installing shippable_replace"
-cp /u16/shippable_replace /usr/local/bin/shippable_replace
-
-echo "Installing shippable_jdk"
-cp /u16/shippable_jdk /usr/local/bin/shippable_jdk
-
-echo "Installing shipctl"
-cp /u16/shipctl /usr/local/bin/shipctl
-
-echo "Installing utility.sh"
-cp /u16/utility.sh /usr/local/bin/utility.sh
+git clone https://github.com/Shippable/node.git
+./node/shipctl/Ubuntu_16.04/install.sh
+rm -rf node
 
 echo "Installed Shippable CLIs successfully"
 echo "-------------------------------------"
