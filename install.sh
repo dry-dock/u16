@@ -165,7 +165,7 @@ echo "-----------------------------------"
 echo "================= Intalling Shippable CLIs ================="
 
 git clone https://github.com/Shippable/node.git nodeRepo
-./nodeRepo/shipctl/Ubuntu_16.04/install.sh
+./nodeRepo/shipctl/x86_64/Ubuntu_16.04/install.sh
 rm -rf nodeRepo
 
 echo "Installed Shippable CLIs successfully"
