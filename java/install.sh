@@ -7,7 +7,7 @@ apt-get install default-jdk=2:1.8-56ubuntu2
 echo "================= Installing openjdk-8-jdk ==================="
 add-apt-repository -y ppa:openjdk-r/ppa
 apt-get update
-apt-get install -y openjdk-8-jdk=8u131-b11-2ubuntu1.16.04.3
+apt-get install -y openjdk-8-jdk=8u151-b12-0ubuntu0.16.04.2
 update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
 add-apt-repository ppa:maarten-fonville/ppa
