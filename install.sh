@@ -30,12 +30,12 @@ apt-get install -y \
   gcc=4:5.3.1-1ubuntu1 \
   gettext=0.19.7-2ubuntu3 \
   htop=2.0.1-1ubuntu1 \
-  libxml2-dev=2.9.3+dfsg1-1ubuntu0.3 \
+  libxml2-dev=2.9.3+dfsg1-1ubuntu0.4 \
   libxslt1-dev=1.1.28-2.1ubuntu0.1 \
   make=4.1-6 \
   nano=2.5.3-2ubuntu2 \
   openssh-client=1:7.2p2-4ubuntu2.1 \
-  openssl=1.0.2g-1ubuntu4.9 \
+  openssl=1.0.2g-1ubuntu4.10 \
   software-properties-common=0.96.20.7 \
   sudo=1.8.16-0ubuntu1.4  \
   texinfo=6.1.0.dfsg.1-5 \
