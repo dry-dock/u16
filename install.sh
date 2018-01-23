@@ -4,7 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 echo "================ Installing locales ======================="
 apt-get clean && apt-get update
-apt-get install locales=2.23-0ubuntu9
+apt-get install -q locales=2.23*
 
 dpkg-divert --local --rename --add /sbin/initctl
 locale-gen en_US en_US.UTF-8
@@ -24,48 +24,48 @@ mv 90forceyes /etc/apt/apt.conf.d/
 touch "$HOME/.ssh/known_hosts"
 
 echo "================= Installing basic packages ==================="
-apt-get install -y \
-  build-essential=12.1ubuntu2 \
-  curl=7.47.0-1ubuntu2.5 \
-  gcc=4:5.3.1-1ubuntu1 \
-  gettext=0.19.7-2ubuntu3 \
-  htop=2.0.1-1ubuntu1 \
-  libxml2-dev=2.9.3+dfsg1-1ubuntu0.4 \
-  libxslt1-dev=1.1.28-2.1ubuntu0.1 \
-  make=4.1-6 \
-  nano=2.5.3-2ubuntu2 \
-  openssh-client=1:7.2p2-4ubuntu2.1 \
-  openssl=1.0.2g-1ubuntu4.10 \
+apt-get install -q -y \
+  build-essential=12.1* \
+  curl=7.47.0* \
+  gcc=4:5.3.1* \
+  gettext=0.19.7* \
+  htop=2.0.1* \
+  libxml2-dev=2.9.3* \
+  libxslt1-dev=1.1.28* \
+  make=4.1* \
+  nano=2.5.3* \
+  openssh-client=1:7.2p2* \
+  openssl=1.0.2g* \
   software-properties-common=0.96.20.7 \
-  sudo=1.8.16-0ubuntu1.4  \
-  texinfo=6.1.0.dfsg.1-5 \
+  sudo=1.8.16*  \
+  texinfo=6.1.0* \
   unzip=6.0-20ubuntu1 \
-  wget=1.17.1-1ubuntu1.3 \
-  rsync=3.1.1-3ubuntu1 \
-  psmisc=22.21-2.1build1 \
-  vim=2:7.4.1689-3ubuntu1.2
+  wget=1.17.1* \
+  rsync=3.1.1* \
+  psmisc=22.21* \
+  vim=2:7.4.1689*
 
 echo "================= Installing Python packages ==================="
-apt-get install -y \
-  python-pip=8.1.1-2ubuntu0.4 \
-  python-software-properties=0.96.20.7 \
-  python-dev=2.7.11-1
+apt-get install -q -y \
+  python-pip=8.1.1* \
+  python-software-properties=0.96.20* \
+  python-dev=2.7.11*
 
-pip install virtualenv==15.1.0
-pip install pyOpenSSL==16.2.0
+pip install -q virtualenv==15.1.0
+pip install -q pyOpenSSL==16.2.0
 
 echo "================= Installing Git ==================="
 add-apt-repository ppa:git-core/ppa -y
 apt-get update
-apt-get install -y git=1:2.15.1-1~ppa0~ubuntu16.04.1
+apt-get install -q -y git=1:2.15.1*
 
 echo "================= Installing Git LFS ==================="
 curl -sS https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-sudo apt-get install git-lfs=2.0.1
+sudo apt-get install -q git-lfs=2.0.1
 git lfs install
 
 echo "================= Adding JQ 1.5.1 ==================="
-apt-get install jq=1.5+dfsg-1
+apt-get install -q jq=1.5*
 
 echo "================= Installing Node 7.x ==================="
 . /u16/node/install.sh
@@ -81,7 +81,7 @@ echo "================= Adding gcloud ============"
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
 curl -sS https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-sudo apt-get update && sudo apt-get install google-cloud-sdk=173.0.0-0
+sudo apt-get update && sudo apt-get install -q google-cloud-sdk=173.0.0-0
 
 KUBECTL_VERSION=1.8.0
 echo "================= Adding kubectl $KUBECTL_VERSION ==================="
@@ -90,18 +90,18 @@ chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 
 echo "================= Adding awscli 1.11.164 ============"
-sudo pip install 'awscli==1.11.164'
+sudo pip install -q 'awscli==1.11.164'
 
 echo "================= Adding awsebcli 3.11.0 ============"
-sudo pip install 'awsebcli==3.11.0'
+sudo pip install -q 'awsebcli==3.11.0'
 
 AZURE_CLI_VERSION=2.0.19-1
 echo "================ Adding azure-cli $AZURE_CLI_VERSION =============="
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
   sudo tee /etc/apt/sources.list.d/azure-cli.list
 sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
-sudo apt-get install apt-transport-https=1.2.24
-sudo apt-get update && sudo apt-get install azure-cli=$AZURE_CLI_VERSION
+sudo apt-get install -q apt-transport-https=1.2.24
+sudo apt-get update && sudo apt-get install -q azure-cli=$AZURE_CLI_VERSION
 
 echo "================= Adding doctl 1.6.0 ============"
 curl -OL https://github.com/digitalocean/doctl/releases/download/v1.6.0/doctl-1.6.0-linux-amd64.tar.gz
@@ -116,19 +116,19 @@ sudo chmod +x jfrog
 mv jfrog /usr/bin/jfrog
 
 echo "================ Adding ansible 2.3.0.0 ===================="
-sudo pip install 'ansible==2.3.0.0'
+sudo pip install -q 'ansible==2.3.0.0'
 
 echo "================ Adding boto 2.46.1 ======================="
-sudo pip install 'boto==2.46.1'
+sudo pip install -q 'boto==2.46.1'
 
 echo "================ Adding apache-libcloud 2.0.0 ======================="
-sudo pip install 'apache-libcloud==2.0.0'
+sudo pip install -q 'apache-libcloud==2.0.0'
 
 echo "================ Adding azure 2.0.0 ======================="
-sudo pip install 'azure==2.0.0'
+sudo pip install -q 'azure==2.0.0'
 
 echo "================ Adding dopy 0.3.7a ======================="
-sudo pip install 'dopy==0.3.7a'
+sudo pip install -q 'dopy==0.3.7a'
 
 export TF_VERSION=0.8.7
 echo "================ Adding terraform- $TF_VERSION  ===================="
