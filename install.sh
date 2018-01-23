@@ -89,19 +89,33 @@ curl -sSLO https://storage.googleapis.com/kubernetes-release/release/v"$KUBECTL_
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 
+KOPS_VERSION=1.8.0
+echo "Installing KOPS version: $KOPS_VERSION"
+curl -LO https://github.com/kubernetes/kops/releases/download/"$KOPS_VERSION"/kops-linux-amd64
+chmod +x kops-linux-amd64
+mv kops-linux-amd64 /usr/local/bin/kops
+
+HELM_VERSION=v2.8.0
+echo "Installing helm version: $HELM_VERSION"
+wget https://storage.googleapis.com/kubernetes-helm/helm-"$HELM_VERSION"-linux-amd64.tar.gz
+tar -zxvf helm-"$HELM_VERSION"-linux-amd64.tar.gz
+mv linux-amd64/helm /usr/local/bin/helm
+rm -rf linux-amd64
+
+
 echo "================= Adding awscli 1.11.164 ============"
 sudo pip install -q 'awscli==1.11.164'
 
 echo "================= Adding awsebcli 3.11.0 ============"
 sudo pip install -q 'awsebcli==3.11.0'
 
-AZURE_CLI_VERSION=2.0.19-1
+AZURE_CLI_VERSION=2.0.23*
 echo "================ Adding azure-cli $AZURE_CLI_VERSION =============="
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
   sudo tee /etc/apt/sources.list.d/azure-cli.list
 sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
 sudo apt-get install -q apt-transport-https=1.2.24
-sudo apt-get update && sudo apt-get install -q azure-cli=$AZURE_CLI_VERSION
+sudo apt-get update && sudo apt-get install -q -y azure-cli=$AZURE_CLI_VERSION
 
 echo "================= Adding doctl 1.6.0 ============"
 curl -OL https://github.com/digitalocean/doctl/releases/download/v1.6.0/doctl-1.6.0-linux-amd64.tar.gz
@@ -120,6 +134,9 @@ sudo pip install -q 'ansible==2.3.0.0'
 
 echo "================ Adding boto 2.46.1 ======================="
 sudo pip install -q 'boto==2.46.1'
+
+echo "================ Adding boto3 ======================="
+sudo pip install -q 'boto3==1.5.15'
 
 echo "================ Adding apache-libcloud 2.0.0 ======================="
 sudo pip install -q 'apache-libcloud==2.0.0'
