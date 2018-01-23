@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 echo "================= Installing default-jdk & jre ==================="
-apt-get install -q default-jre=2:1.8*
-apt-get install -q default-jdk=2:1.8*
+apt-get install -q -y  default-jre=2:1.8*
+apt-get install -q -y default-jdk=2:1.8*
 
 echo "================= Installing openjdk-8-jdk ==================="
 add-apt-repository -y ppa:openjdk-r/ppa
@@ -12,7 +12,7 @@ update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
 add-apt-repository ppa:maarten-fonville/ppa
 apt-get update
-apt-get install -q icedtea-8-plugin=1.6.2*
+apt-get install -y -q icedtea-8-plugin=1.6.2*
 update-alternatives --set javaws /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/javaws
 
 echo "================ Installing oracle-java8-installer ================="
