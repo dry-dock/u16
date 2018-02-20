@@ -50,7 +50,7 @@ echo "================= Installing Python packages ==================="
 apt-get install -q -y \
   python-pip=8.1.1* \
   python-software-properties=0.96.20* \
-  python-dev=2.7.11*
+  python-dev=2.7.12*
 
 pip install -q virtualenv==15.1.0
 pip install -q pyOpenSSL==16.2.0
@@ -58,7 +58,7 @@ pip install -q pyOpenSSL==16.2.0
 echo "================= Installing Git ==================="
 add-apt-repository ppa:git-core/ppa -y
 apt-get update
-apt-get install -q -y git=1:2.16.1*
+apt-get install -q -y git=1:2.16.2*
 
 echo "================= Installing Git LFS ==================="
 curl -sS https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
