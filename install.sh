@@ -140,8 +140,8 @@ sudo pip install -q 'boto==2.48.0'
 echo "================ Adding boto3 ======================="
 sudo pip install -q 'boto3==1.6.16'
 
-echo "================ Adding apache-libcloud 2.4.33 ======================="
-sudo pip install -q 'apache-libcloud==2.4.33'
+echo "================ Adding apache-libcloud 2.3.0 ======================="
+sudo pip install -q 'apache-libcloud==2.3.0'
 
 echo "================ Adding azure 3.0.0 ======================="
 sudo pip install -q 'azure==3.0.0'
