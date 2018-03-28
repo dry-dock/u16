@@ -83,15 +83,15 @@ echo "================= Adding gcloud ============"
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
 curl -sS https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-sudo apt-get update && sudo apt-get install -q google-cloud-sdk=173.0.0-0
+sudo apt-get update && sudo apt-get install -q google-cloud-sdk=194.0.0-0
 
-KUBECTL_VERSION=1.8.0
+KUBECTL_VERSION=1.9.0
 echo "================= Adding kubectl $KUBECTL_VERSION ==================="
 curl -sSLO https://storage.googleapis.com/kubernetes-release/release/v"$KUBECTL_VERSION"/bin/linux/amd64/kubectl
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 
-KOPS_VERSION=1.8.0
+KOPS_VERSION=1.8.1
 echo "Installing KOPS version: $KOPS_VERSION"
 curl -LO https://github.com/kubernetes/kops/releases/download/"$KOPS_VERSION"/kops-linux-amd64
 chmod +x kops-linux-amd64
@@ -119,37 +119,37 @@ sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
 sudo apt-get install -q apt-transport-https=1.2.26
 sudo apt-get update && sudo apt-get install -q -y azure-cli=$AZURE_CLI_VERSION
 
-echo "================= Adding doctl 1.6.0 ============"
-curl -OL https://github.com/digitalocean/doctl/releases/download/v1.6.0/doctl-1.6.0-linux-amd64.tar.gz
-tar xf doctl-1.6.0-linux-amd64.tar.gz
+echo "================= Adding doctl 1.7.2 ============"
+curl -OL https://github.com/digitalocean/doctl/releases/download/v1.7.2/doctl-1.7.2-linux-amd64.tar.gz
+tar xf doctl-1.7.2-linux-amd64.tar.gz
 sudo mv ~/doctl /usr/local/bin
-rm doctl-1.6.0-linux-amd64.tar.gz
+rm doctl-1.7.2-linux-amd64.tar.gz
 
-JFROG_VERSION=1.7.0
+JFROG_VERSION=1.14.0
 echo "================= Adding jfrog-cli $JFROG_VERSION  ==================="
 wget -nv https://api.bintray.com/content/jfrog/jfrog-cli-go/"$JFROG_VERSION"/jfrog-cli-linux-amd64/jfrog?bt_package=jfrog-cli-linux-amd64 -O jfrog
 sudo chmod +x jfrog
 mv jfrog /usr/bin/jfrog
 
-echo "================ Adding ansible 2.3.0.0 ===================="
-sudo pip install -q 'ansible==2.3.0.0'
+echo "================ Adding ansible 2.4.3.0 ===================="
+sudo pip install -q 'ansible==2.4.3.0'
 
-echo "================ Adding boto 2.46.1 ======================="
-sudo pip install -q 'boto==2.46.1'
+echo "================ Adding boto 2.48.0 ======================="
+sudo pip install -q 'boto==2.48.0'
 
 echo "================ Adding boto3 ======================="
-sudo pip install -q 'boto3==1.5.15'
+sudo pip install -q 'boto3==1.6.16'
 
-echo "================ Adding apache-libcloud 2.0.0 ======================="
-sudo pip install -q 'apache-libcloud==2.0.0'
+echo "================ Adding apache-libcloud 2.4.33 ======================="
+sudo pip install -q 'apache-libcloud==2.4.33'
 
-echo "================ Adding azure 2.0.0 ======================="
-sudo pip install -q 'azure==2.0.0'
+echo "================ Adding azure 3.0.0 ======================="
+sudo pip install -q 'azure==3.0.0'
 
 echo "================ Adding dopy 0.3.7a ======================="
 sudo pip install -q 'dopy==0.3.7a'
 
-export TF_VERSION=0.8.7
+export TF_VERSION=0.11.5
 echo "================ Adding terraform- $TF_VERSION  ===================="
 export TF_FILE=terraform_"$TF_VERSION"_linux_amd64.zip
 
