@@ -40,6 +40,7 @@ apt-get install -q -y \
   software-properties-common=0.96.20.7 \
   sudo=1.8.16*  \
   texinfo=6.1.0* \
+  zip=3.0* \
   unzip=6.0-20ubuntu1 \
   wget=1.17.1* \
   rsync=3.1.1* \
