@@ -50,7 +50,7 @@ apt-get install -q -y \
 
 echo "================= Installing Python packages ==================="
 apt-get install -q -y \
-  python-pip=8.1.1* \
+  python-pip=9.0.3* \
   python-software-properties=0.96.20* \
   python-dev=2.7.12*
 
