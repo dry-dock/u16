@@ -120,11 +120,11 @@ sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
 sudo apt-get install -q apt-transport-https=1.2.26
 sudo apt-get update && sudo apt-get install -q -y azure-cli=$AZURE_CLI_VERSION
 
-echo "================= Adding doctl 2.3.2 ============"
-curl -OL https://github.com/digitalocean/doctl/releases/download/v2.3.2/doctl-2.3.2-linux-amd64.tar.gz
-tar xf doctl-2.3.2-linux-amd64.tar.gz
+echo "================= Adding doctl 2.3.1 ============"
+curl -OL https://github.com/digitalocean/doctl/releases/download/v2.3.1/doctl-2.3.1-linux-amd64.tar.gz
+tar xf doctl-2.3.1-linux-amd64.tar.gz
 sudo mv ~/doctl /usr/local/bin
-rm doctl-2.3.2-linux-amd64.tar.gz
+rm doctl-2.3.1-linux-amd64.tar.gz
 
 JFROG_VERSION=1.14.0
 echo "================= Adding jfrog-cli $JFROG_VERSION  ==================="
