@@ -111,7 +111,7 @@ sudo pip install -q 'awscli==1.14.64'
 echo "================= Adding awsebcli 3.12.4 ============"
 sudo pip install -q 'awsebcli==3.12.4'
 
-AZURE_CLI_VERSION=2.0.29*
+AZURE_CLI_VERSION=2.0.*
 echo "================ Adding azure-cli $AZURE_CLI_VERSION =============="
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
   sudo tee /etc/apt/sources.list.d/azure-cli.list
