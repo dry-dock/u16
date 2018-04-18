@@ -27,35 +27,35 @@ mkdir -p /etc/drydock
 echo "================= Installing basic packages ==================="
 apt-get install -q -y \
   build-essential=12.1* \
-  curl=7.47.0* \
-  gcc=4:5.3.1* \
-  gettext=0.19.7* \
-  htop=2.0.1* \
-  libxml2-dev=2.9.3* \
-  libxslt1-dev=1.1.28* \
+  curl=7.47* \
+  gcc=4:5.3* \
+  gettext=0.19* \
+  htop=2.0* \
+  libxml2-dev=2.9* \
+  libxslt1-dev=1.1* \
   make=4.1* \
-  nano=2.5.3* \
-  openssh-client=1:7.2p2* \
-  openssl=1.0.2g* \
-  software-properties-common=0.96.20.7 \
-  sudo=1.8.16*  \
-  texinfo=6.1.0* \
+  nano=2.5* \
+  openssh-client=1:7* \
+  openssl=1.0* \
+  software-properties-common=0.96* \
+  sudo=1.8**  \
+  texinfo=6.1* \
   zip=3.0* \
-  unzip=6.0-20ubuntu1 \
-  wget=1.17.1* \
-  rsync=3.1.1* \
+  unzip=6.0* \
+  wget=1.17* \
+  rsync=3.1* \
   psmisc=22.21* \
   netcat-openbsd=1.105* \
-  vim=2:7.4.1689*
+  vim=2:7.4*
 
 echo "================= Installing Python packages ==================="
 apt-get install -q -y \
-  python-pip=8.1.1* \
-  python-software-properties=0.96.20* \
-  python-dev=2.7.12*
+  python-pip=8.1* \
+  python-software-properties=0.96* \
+  python-dev=2.7*
 
-pip install -q virtualenv==15.1.0
-pip install -q pyOpenSSL==16.2.0
+pip install -q virtualenv==15.2.0     
+pip install -q pyOpenSSL==17.5.0
 
 echo "================= Installing Git ==================="
 add-apt-repository ppa:git-core/ppa -y
@@ -64,7 +64,7 @@ apt-get install -q -y git=1:2.16.2*
 
 echo "================= Installing Git LFS ==================="
 curl -sS https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-sudo apt-get install -q git-lfs=2.0.1
+sudo apt-get install -q git-lfs=2.4.0
 git lfs install
 
 echo "================= Adding JQ 1.5.1 ==================="
@@ -84,7 +84,7 @@ echo "================= Adding gcloud ============"
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
 curl -sS https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-sudo apt-get update && sudo apt-get install -q google-cloud-sdk=194.0.0-0
+sudo apt-get update && sudo apt-get install -q google-cloud-sdk=194.0*
 
 KUBECTL_VERSION=1.9.0
 echo "================= Adding kubectl $KUBECTL_VERSION ==================="
