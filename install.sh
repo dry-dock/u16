@@ -60,23 +60,23 @@ pip install -q pyOpenSSL==17.5.0
 echo "================= Installing Git ==================="
 add-apt-repository ppa:git-core/ppa -y
 apt-get update
-apt-get install -q -y git=1:2.16.2*
+apt-get install -q -y git=1:2.16.2
 
 echo "================= Installing Git LFS ==================="
 curl -sS https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 sudo apt-get install -q git-lfs=2.4.0
 git lfs install
 
-echo "================= Adding JQ 1.5.1 ==================="
+echo "================= Adding JQ 1.5 ==================="
 apt-get install -q jq=1.5*
 
-echo "================= Installing Node 7.x ==================="
+echo "================= Installing Node 8.x ==================="
 . /u16/node/install.sh
 
 echo "================= Installing Java 1.8.0 ==================="
 . /u16/java/install.sh
 
-echo "================= Installing Ruby 2.3.5  ==================="
+echo "================= Installing Ruby 2.5.0  ==================="
 . /u16/ruby/install.sh
 
 
