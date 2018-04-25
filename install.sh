@@ -46,7 +46,8 @@ apt-get install -y \
   rsync=3.1* \
   psmisc=22.21* \
   netcat-openbsd=1.105* \
-  vim=2:7.4*
+  vim=2:7.4* \
+  groff=1.22.*
 
 echo "================= Installing Python packages ==================="
 apt-get install -q -y \
@@ -54,7 +55,7 @@ apt-get install -q -y \
   python-software-properties=0.96* \
   python-dev=2.7*
 
-pip install -q virtualenv==15.2.0     
+pip install -q virtualenv==15.2.0
 pip install -q pyOpenSSL==17.5.0
 
 echo "================= Installing Git ==================="
@@ -65,7 +66,6 @@ apt-get install -q -y git=1:2.17.0-1~ppa0~ubuntu16.04.1
 echo "================= Installing Git LFS ==================="
 curl -sS https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 sudo apt-get install -q git-lfs=2.4.0
-git lfs install
 
 echo "================= Adding JQ 1.5 ==================="
 apt-get install -q jq=1.5*
@@ -105,12 +105,18 @@ tar -zxvf helm-"$HELM_VERSION"-linux-amd64.tar.gz
 mv linux-amd64/helm /usr/local/bin/helm
 rm -rf linux-amd64
 
+echo "================= Adding apache libcloud 2.3.0 ============"
+sudo pip install 'apache-libcloud==2.3.0'
 
 echo "================= Adding awscli 1.14.64 ============"
 sudo pip install -q 'awscli==1.14.64'
 
 echo "================= Adding awsebcli 3.12.4 ============"
 sudo pip install -q 'awsebcli==3.12.4'
+
+echo "================= Adding openstack client 3.15.0 ============"
+sudo pip install 'python-openstackclient==3.15.0'
+sudo pip install 'shade==1.27.1'
 
 AZURE_CLI_VERSION=2.0.*
 echo "================ Adding azure-cli $AZURE_CLI_VERSION =============="
