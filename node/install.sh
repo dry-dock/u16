@@ -11,7 +11,7 @@ echo "source ~/.nvm/nvm.sh" >> /etc/drydock/.env
 
 echo "================= Installing nodejs 8.11 ================="
 curl -sSL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt-get install -y nodejs=8.11.1
+sudo apt-get install -y nodejs=8.11*
 
 echo "================= Installing latest yarn ==================="
 sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
