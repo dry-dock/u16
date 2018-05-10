@@ -108,8 +108,8 @@ rm -rf linux-amd64
 echo "================= Adding apache libcloud 2.3.0 ============"
 sudo pip install 'apache-libcloud==2.3.0'
 
-echo "================= Adding awscli 1.15.64 ============"
-sudo pip install -q 'awscli==1.15.16'
+echo "================= Adding awscli 1.15.14 ============"
+sudo pip install -q 'awscli==1.15.14'
 
 echo "================= Adding awsebcli 3.12.4 ============"
 sudo pip install -q 'awsebcli==3.12.4'
