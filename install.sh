@@ -139,7 +139,7 @@ sudo chmod +x jfrog
 mv jfrog /usr/bin/jfrog
 
 echo "================ Adding ansible 2.5.2 ===================="
-sudo pip install -q 'ansible==2.5.2
+sudo pip install -q 'ansible==2.5.2'
 
 echo "================ Adding boto 2.48.0 ======================="
 sudo pip install -q 'boto==2.48.0'
@@ -156,7 +156,7 @@ sudo pip install -q 'azure==3.0.0'
 echo "================ Adding dopy 0.3.7 ======================="
 sudo pip install -q 'dopy==0.3.7'
 
-export TF_VERSION=0.11.5
+export TF_VERSION=0.11.7
 echo "================ Adding terraform- $TF_VERSION  ===================="
 export TF_FILE=terraform_"$TF_VERSION"_linux_amd64.zip
 
