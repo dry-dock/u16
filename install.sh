@@ -118,13 +118,13 @@ echo "================= Adding openstack client 3.15.0 ============"
 sudo pip install 'python-openstackclient==3.15.0'
 sudo pip install 'shade==1.28.0'
 
-AZURE_CLI_VERSION=2.0.*
+AZURE_CLI_VERSION=2.0*
 echo "================ Adding azure-cli $AZURE_CLI_VERSION =============="
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
-  sudo tee /etc/apt/sources.list.d/azure-cli.list
-sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
-sudo apt-get install -q apt-transport-https=1.2.26
-sudo apt-get update && sudo apt-get install -q -y azure-cli=$AZURE_CLI_VERSION
+sudo tee /etc/apt/sources.list.d/azure-cli.list
+curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+sudo apt-get install -q apt-transport-https=1.2.26*
+sudo apt-get update && sudo apt-get install -y -q azure-cli=$AZURE_CLI_VERSION
 
 echo "================= Adding doctl 1.8.0 ============"
 curl -OL https://github.com/digitalocean/doctl/releases/download/v1.8.0/doctl-1.8.0-linux-amd64.tar.gz
