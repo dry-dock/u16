@@ -118,7 +118,7 @@ echo "================= Adding openstack client 3.15.0 ============"
 sudo pip install 'python-openstackclient==3.15.0'
 sudo pip install 'shade==1.28.0'
 
-AZURE_CLI_VERSION=2.0.36
+AZURE_CLI_VERSION=2.0.37
 echo "================ Adding azure-cli $AZURE_CLI_VERSION =============="
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
   sudo tee /etc/apt/sources.list.d/azure-cli.list
