@@ -55,17 +55,17 @@ apt-get install -q -y \
   python-software-properties=0.96* \
   python-dev=2.7*
 
-pip install -q virtualenv==15.2.0
-pip install -q pyOpenSSL==17.5.0
+pip install -q virtualenv==16.0.0
+pip install -q pyOpenSSL==18.0.0
 
 echo "================= Installing Git ==================="
 add-apt-repository ppa:git-core/ppa -y
 apt-get update
-apt-get install -q -y git=1:2.17*
+apt-get install -q -y git=1:2.18*
 
 echo "================= Installing Git LFS ==================="
 curl -sS https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-sudo apt-get install -q git-lfs=2.4.0
+sudo apt-get install -q git-lfs=2.4.2
 
 echo "================= Adding JQ 1.5x ==================="
 apt-get install -q jq=1.5*
@@ -84,21 +84,21 @@ echo "================= Adding gcloud ============"
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
 curl -sS https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-sudo apt-get update && sudo apt-get install -q google-cloud-sdk=200.0*
+sudo apt-get update && sudo apt-get install -q google-cloud-sdk=207.0*
 
-KUBECTL_VERSION=1.10.0
+KUBECTL_VERSION=1.11.0
 echo "================= Adding kubectl $KUBECTL_VERSION ==================="
 curl -sSLO https://storage.googleapis.com/kubernetes-release/release/v"$KUBECTL_VERSION"/bin/linux/amd64/kubectl
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 
-KOPS_VERSION=1.9.0
+KOPS_VERSION=1.9.1
 echo "Installing KOPS version: $KOPS_VERSION"
 curl -LO https://github.com/kubernetes/kops/releases/download/"$KOPS_VERSION"/kops-linux-amd64
 chmod +x kops-linux-amd64
 mv kops-linux-amd64 /usr/local/bin/kops
 
-HELM_VERSION=v2.9.0
+HELM_VERSION=v2.9.1
 echo "Installing helm version: $HELM_VERSION"
 wget https://storage.googleapis.com/kubernetes-helm/helm-"$HELM_VERSION"-linux-amd64.tar.gz
 tar -zxvf helm-"$HELM_VERSION"-linux-amd64.tar.gz
@@ -108,11 +108,11 @@ rm -rf linux-amd64
 echo "================= Adding apache libcloud 2.3.0 ============"
 sudo pip install 'apache-libcloud==2.3.0'
 
-echo "================= Adding awscli 1.15.14 ============"
-sudo pip install -q 'awscli==1.15.14'
+echo "================= Adding awscli 1.15.55 ============"
+sudo pip install -q 'awscli==1.15.55'
 
-echo "================= Adding awsebcli 3.12.4 ============"
-sudo pip install -q 'awsebcli==3.12.4'
+echo "================= Adding awsebcli 3.14.2 ============"
+sudo pip install -q 'awsebcli==3.14.2'
 
 echo "================= Adding openstack client 3.15.0 ============"
 sudo pip install 'python-openstackclient==3.15.0'
@@ -126,26 +126,26 @@ curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 sudo apt-get install -q apt-transport-https=1.2.26*
 sudo apt-get update && sudo apt-get install -y -q azure-cli=$AZURE_CLI_VERSION
 
-echo "================= Adding doctl 1.8.0 ============"
-curl -OL https://github.com/digitalocean/doctl/releases/download/v1.8.0/doctl-1.8.0-linux-amd64.tar.gz
-tar xf doctl-1.8.0-linux-amd64.tar.gz
+echo "================= Adding doctl 1.8.3 ============"
+curl -OL https://github.com/digitalocean/doctl/releases/download/v1.8.3/doctl-1.8.3-linux-amd64.tar.gz
+tar xf doctl-1.8.3-linux-amd64.tar.gz
 sudo mv ~/doctl /usr/local/bin
-rm doctl-1.8.0-linux-amd64.tar.gz
+rm doctl-1.8.3-linux-amd64.tar.gz
 
-JFROG_VERSION=1.15.1
+JFROG_VERSION=1.17.0
 echo "================= Adding jfrog-cli $JFROG_VERSION  ==================="
 wget -nv https://api.bintray.com/content/jfrog/jfrog-cli-go/"$JFROG_VERSION"/jfrog-cli-linux-amd64/jfrog?bt_package=jfrog-cli-linux-amd64 -O jfrog
 sudo chmod +x jfrog
 mv jfrog /usr/bin/jfrog
 
-echo "================ Adding ansible 2.5.2 ===================="
-sudo pip install -q 'ansible==2.5.2'
+echo "================ Adding ansible 2.6.1 ===================="
+sudo pip install -q 'ansible==2.6.1'
 
 echo "================ Adding boto 2.48.0 ======================="
 sudo pip install -q 'boto==2.48.0'
 
 echo "================ Adding boto3 ======================="
-sudo pip install -q 'boto3==1.7.16'
+sudo pip install -q 'boto3==1.7.54'
 
 echo "================ Adding apache-libcloud 2.3.0 ======================="
 sudo pip install -q 'apache-libcloud==2.3.0'
@@ -172,7 +172,7 @@ mv /tmp/terraform/terraform /usr/bin/terraform
 echo "Added terraform successfully"
 echo "-----------------------------------"
 
-export PK_VERSION=1.2.3
+export PK_VERSION=1.2.4
 echo "================ Adding packer $PK_VERSION  ===================="
 export PK_FILE=packer_"$PK_VERSION"_linux_amd64.zip
 
