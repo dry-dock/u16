@@ -79,13 +79,6 @@ echo "================= Installing Java 1.8.0 ==================="
 echo "================= Installing Ruby 2.5.1  ==================="
 . /u16/ruby/install.sh
 
-
-echo "================= Adding gcloud ============"
-CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
-echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
-curl -sS https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-sudo apt-get update && sudo apt-get install -q google-cloud-sdk=207.0*
-
 KUBECTL_VERSION=1.11.0
 echo "================= Adding kubectl $KUBECTL_VERSION ==================="
 curl -sSLO https://storage.googleapis.com/kubernetes-release/release/v"$KUBECTL_VERSION"/bin/linux/amd64/kubectl
@@ -108,9 +101,6 @@ rm -rf linux-amd64
 echo "================= Adding apache libcloud 2.3.0 ============"
 sudo pip install 'apache-libcloud==2.3.0'
 
-echo "================= Adding awscli 1.15.55 ============"
-sudo pip install -q 'awscli==1.15.55'
-
 echo "================= Adding awsebcli 3.14.2 ============"
 sudo pip install -q 'awsebcli==3.14.2'
 
@@ -118,25 +108,11 @@ echo "================= Adding openstack client 3.15.0 ============"
 sudo pip install 'python-openstackclient==3.15.0'
 sudo pip install 'shade==1.28.0'
 
-AZURE_CLI_VERSION=2.0*
-echo "================ Adding azure-cli $AZURE_CLI_VERSION =============="
-echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
-sudo tee /etc/apt/sources.list.d/azure-cli.list
-curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-sudo apt-get install -q apt-transport-https=1.2*
-sudo apt-get update && sudo apt-get install -y -q azure-cli=$AZURE_CLI_VERSION
-
 echo "================= Adding doctl 1.8.3 ============"
 curl -OL https://github.com/digitalocean/doctl/releases/download/v1.8.3/doctl-1.8.3-linux-amd64.tar.gz
 tar xf doctl-1.8.3-linux-amd64.tar.gz
 sudo mv ~/doctl /usr/local/bin
 rm doctl-1.8.3-linux-amd64.tar.gz
-
-JFROG_VERSION=1.17.0
-echo "================= Adding jfrog-cli $JFROG_VERSION  ==================="
-wget -nv https://api.bintray.com/content/jfrog/jfrog-cli-go/"$JFROG_VERSION"/jfrog-cli-linux-amd64/jfrog?bt_package=jfrog-cli-linux-amd64 -O jfrog
-sudo chmod +x jfrog
-mv jfrog /usr/bin/jfrog
 
 echo "================ Adding ansible 2.6.1 ===================="
 sudo pip install -q 'ansible==2.6.1'
@@ -187,6 +163,11 @@ mv /tmp/packer/packer /usr/bin/packer
 
 echo "Added packer successfully"
 echo "-----------------------------------"
+
+echo "================= Intalling cliConfig CLIs ================="
+. /u16/installCLIs.sh
+echo "Installed cliConfig CLIs successfully"
+echo "-------------------------------------"
 
 echo "================= Intalling Shippable CLIs ================="
 
