@@ -10,7 +10,8 @@ export NVM_DIR="/root/.nvm"
 echo "source ~/.nvm/nvm.sh" >> /etc/drydock/.env
 
 echo "================= Installing nodejs 8.11 ================="
-curl -sSL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+curl -sSL https://deb.nodesource.com/setup_8.x | sudo -E bash 
+sudo npm install npm --global
 sudo apt-get install -y nodejs=8.11*
 
 echo "================= Installing latest yarn ==================="
