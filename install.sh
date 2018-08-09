@@ -65,7 +65,7 @@ apt-get install -q -y git=1:2.*
 
 echo "================= Installing Git LFS ==================="
 curl -sS https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-sudo apt-get install -q git-lfs=2.4.2
+sudo apt-get install -q git-lfs=2.5.1
 
 echo "================= Adding JQ 1.5x ==================="
 apt-get install -q jq=1.5*
