@@ -9,7 +9,6 @@ add-apt-repository -y ppa:openjdk-r/ppa
 apt-get update
 apt-get install -y -q openjdk-10-jdk
 
-
 echo "================ Installing oracle-java10-installer ================="
 echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
 add-apt-repository -y ppa:linuxuprising/java
