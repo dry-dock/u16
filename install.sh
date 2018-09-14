@@ -130,7 +130,7 @@ echo "================= Adding doctl 1.9.0 ============"
 curl -OL https://github.com/digitalocean/doctl/releases/download/v1.9.0/doctl-1.9.0-linux-amd64.tar.gz
 tar xf doctl-1.9.0-linux-amd64.tar.gz
 sudo mv ~/doctl /usr/local/bin
-rm doctl-1.9.9-linux-amd64.tar.gz
+rm doctl-1.9.0-linux-amd64.tar.gz
 
 JFROG_VERSION=1.19.1
 echo "================= Adding jfrog-cli $JFROG_VERSION  ==================="
