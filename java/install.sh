@@ -1,9 +1,5 @@
 #!/bin/bash -e
 
-echo "================= Installing default-jdk & jre ==================="
-apt-get install -q default-jre=2:1.8*
-apt-get install -q default-jdk=2:1.8*
-
 echo "================= Installing openjdk-10-jdk ==================="
 export OPENJDK_VERSION="10.0.2"
 mkdir -p /usr/lib/jvm && cd /usr/lib/jvm
