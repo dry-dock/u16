@@ -84,7 +84,7 @@ echo "================= Adding gcloud ============"
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
 curl -sS https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-sudo apt-get update && sudo apt-get install -q google-cloud-sdk=211.0*
+sudo apt-get update && sudo apt-get install -q google-cloud-sdk=216.0*
 
 KUBECTL_VERSION=1.11.0
 echo "================= Adding kubectl $KUBECTL_VERSION ==================="
@@ -92,13 +92,13 @@ curl -sSLO https://storage.googleapis.com/kubernetes-release/release/v"$KUBECTL_
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 
-KOPS_VERSION=1.9.2
+KOPS_VERSION=1.10.0
 echo "Installing KOPS version: $KOPS_VERSION"
 curl -LO https://github.com/kubernetes/kops/releases/download/"$KOPS_VERSION"/kops-linux-amd64
 chmod +x kops-linux-amd64
 mv kops-linux-amd64 /usr/local/bin/kops
 
-HELM_VERSION=v2.9.1
+HELM_VERSION=v2.10.0
 echo "Installing helm version: $HELM_VERSION"
 wget https://storage.googleapis.com/kubernetes-helm/helm-"$HELM_VERSION"-linux-amd64.tar.gz
 tar -zxvf helm-"$HELM_VERSION"-linux-amd64.tar.gz
@@ -108,14 +108,14 @@ rm -rf linux-amd64
 echo "================= Adding apache libcloud 2.3.0 ============"
 sudo pip install 'apache-libcloud==2.3.0'
 
-echo "================= Adding awscli 1.15.73 ============"
-sudo pip install -q 'awscli==1.15.73'
+echo "================= Adding awscli 1.16.14 ============"
+sudo pip install -q 'awscli==1.16.14'
 
-echo "================= Adding awsebcli 3.14.3 ============"
-sudo pip install -q 'awsebcli==3.14.3'
+echo "================= Adding awsebcli 3.14.6 ============"
+sudo pip install -q 'awsebcli==3.14.6'
 
-echo "================= Adding openstack client 3.16.0 ============"
-sudo pip install 'python-openstackclient==3.16.0'
+echo "================= Adding openstack client 3.16.1 ============"
+sudo pip install 'python-openstackclient==3.16.1'
 sudo pip install 'shade==1.29.0'
 
 AZURE_CLI_VERSION=2.0*
@@ -126,26 +126,26 @@ curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 sudo apt-get install -q apt-transport-https=1.2*
 sudo apt-get update && sudo apt-get install -y -q azure-cli=$AZURE_CLI_VERSION
 
-echo "================= Adding doctl 1.8.3 ============"
-curl -OL https://github.com/digitalocean/doctl/releases/download/v1.8.3/doctl-1.8.3-linux-amd64.tar.gz
-tar xf doctl-1.8.3-linux-amd64.tar.gz
+echo "================= Adding doctl 1.9.0 ============"
+curl -OL https://github.com/digitalocean/doctl/releases/download/v1.9.0/doctl-1.9.0-linux-amd64.tar.gz
+tar xf doctl-1.9.0-linux-amd64.tar.gz
 sudo mv ~/doctl /usr/local/bin
-rm doctl-1.8.3-linux-amd64.tar.gz
+rm doctl-1.9.0-linux-amd64.tar.gz
 
-JFROG_VERSION=1.18.0
+JFROG_VERSION=1.19.1
 echo "================= Adding jfrog-cli $JFROG_VERSION  ==================="
 wget -nv https://api.bintray.com/content/jfrog/jfrog-cli-go/"$JFROG_VERSION"/jfrog-cli-linux-amd64/jfrog?bt_package=jfrog-cli-linux-amd64 -O jfrog
 sudo chmod +x jfrog
 mv jfrog /usr/bin/jfrog
 
-echo "================ Adding ansible 2.6.2 ===================="
-sudo pip install -q 'ansible==2.6.2'
+echo "================ Adding ansible 2.6.4 ===================="
+sudo pip install -q 'ansible==2.6.4'
 
 echo "================ Adding boto 2.49.0 ======================="
 sudo pip install -q 'boto==2.49.0'
 
 echo "================ Adding boto3 ======================="
-sudo pip install -q 'boto3==1.7.72'
+sudo pip install -q 'boto3==1.9.4'
 
 echo "================ Adding apache-libcloud 2.3.0 ======================="
 sudo pip install -q 'apache-libcloud==2.3.0'
@@ -156,7 +156,7 @@ sudo pip install -q 'azure==3.0.0'
 echo "================ Adding dopy 0.3.7 ======================="
 sudo pip install -q 'dopy==0.3.7'
 
-export TF_VERSION=0.11.7
+export TF_VERSION=0.11.8
 echo "================ Adding terraform- $TF_VERSION  ===================="
 export TF_FILE=terraform_"$TF_VERSION"_linux_amd64.zip
 
@@ -172,7 +172,7 @@ mv /tmp/terraform/terraform /usr/bin/terraform
 echo "Added terraform successfully"
 echo "-----------------------------------"
 
-export PK_VERSION=1.2.5
+export PK_VERSION=1.3.0
 echo "================ Adding packer $PK_VERSION  ===================="
 export PK_FILE=packer_"$PK_VERSION"_linux_amd64.zip
 
