@@ -51,7 +51,7 @@ apt-get install -y \
 
 echo "================= Installing Python packages ==================="
 apt-get install -q -y \
-  python-pip=8.1* \
+  python-pip=18.0 \
   python-software-properties=0.96* \
   python-dev=2.7*
 
