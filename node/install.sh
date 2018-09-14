@@ -12,7 +12,7 @@ echo "source ~/.nvm/nvm.sh" >> /etc/drydock/.env
 echo "================= Installing nodejs 8.12 ================="
 curl -sSL https://deb.nodesource.com/setup_8.x | sudo -E bash 
 sudo apt-get install -y nodejs=8.12*
-sudo npm install npm@4.0.1 -g
+sudo npm install npm@6.4.1 -g
 
 
 echo "================= Installing latest yarn ==================="
