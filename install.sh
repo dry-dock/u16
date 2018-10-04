@@ -49,7 +49,7 @@ apt-get install -y \
   vim=2:7.4* \
   groff=1.22.*
 
-echo "================= Installing Python packages ==================="
+echo "================= Installing Python packages ===================================="
 apt-get install -q -y \
   python-pip=8.1* \
   python-software-properties=0.96* \
@@ -59,7 +59,7 @@ pip install -q virtualenv==16.0.0
 pip install -q pyOpenSSL==18.0.0
 
 export GIT_VERSION=1:2.*
-echo "================= Installing Git $GIT_VERSION =========================="
+echo "================= Installing Git $GIT_VERSION ===================================="
 add-apt-repository ppa:git-core/ppa -y
 apt-get update -qq
 apt-get install -y -q git="$GIT_VERSION"
@@ -75,21 +75,21 @@ apt-get install -y -q jq="$JQ_VERSION"
 echo "================= Installing Node ======================================================"
 . /u16/node/install.sh
 
-echo "================= Installing Java  ======================================================"
+echo "================= Installing Java  ====================================================="
 . /u16/java/install.sh
 
-echo "================= Installing Ruby  ======================================================="
+echo "================= Installing Ruby  ====================================================="
 . /u16/ruby/install.sh
 
 export CLOUD_SDKREPO=216.0*
-echo "================= Adding gcloud $CLOUD_SDK_REPO =========================================="
+echo "================= Adding gcloud $CLOUD_SDK_REPO ========================================"
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
 curl -sS https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 sudo apt-get update && sudo apt-get install google-cloud-sdk="$CLOUD_SDKREPO"
 
 KUBECTL_VERSION=1.11.0
-echo "================= Adding kubectl $KUBECTL_VERSION ==================="
+echo "================= Adding kubectl $KUBECTL_VERSION ======================================"
 curl -sSLO https://storage.googleapis.com/kubernetes-release/release/v"$KUBECTL_VERSION"/bin/linux/amd64/kubectl
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
@@ -107,21 +107,24 @@ tar -zxvf helm-"$HELM_VERSION"-linux-amd64.tar.gz
 mv linux-amd64/helm /usr/local/bin/helm
 rm -rf linux-amd64
 
-echo "================= Adding apache libcloud 2.3.0 ============"
-sudo pip install 'apache-libcloud==2.3.0'
+export AWS_VERSION=1.16.14
+echo "================= Adding awscli $AWS_VERSION ========================================"
+sudo pip install awscli=="$AWS_VERSION"
 
-echo "================= Adding awscli 1.16.14 ============"
-sudo pip install -q 'awscli==1.16.14'
+export AWSEBCLI_VERSION=3.14.6
+echo "================= Adding awsebcli $AWSEBCLI_VERSION ================================"
+sudo pip install awsebcli=="$AWSEBCLI_VERSION"
 
-echo "================= Adding awsebcli 3.14.6 ============"
-sudo pip install -q 'awsebcli==3.14.6'
+export OPENSTACKCLIENT_VERSION=3.16.1
+echo "================= Adding openstack client $OPENSTACKCLIENT_VERSION ================="
+sudo pip install python-openstackclient=="$OPENSTACKCLIENT_VERSION"
 
-echo "================= Adding openstack client 3.16.1 ============"
-sudo pip install 'python-openstackclient==3.16.1'
-sudo pip install 'shade==1.29.0'
+export SHADE_VERSION=1.29.0
+echo "================= Adding shade $SHADE_VERSION ====================================="
+sudo pip install shade=="$SHADE_VERSION"
 
 AZURE_CLI_VERSION=2.0*
-echo "================ Adding azure-cli $AZURE_CLI_VERSION =============="
+echo "================ Adding azure-cli $AZURE_CLI_VERSION ============================="
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
 sudo tee /etc/apt/sources.list.d/azure-cli.list
 curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
@@ -129,14 +132,14 @@ sudo apt-get install -q apt-transport-https=1.2*
 sudo apt-get update && sudo apt-get install -y -q azure-cli=$AZURE_CLI_VERSION
 
 export DOCTL_VERSION=1.9.0
-echo "================= Adding doctl $DOCTL_VERSION ============="
+echo "================= Adding doctl $DOCTL_VERSION ====================================="
 curl -OL https://github.com/digitalocean/doctl/releases/download/v1.9.0/doctl-1.9.0-linux-amd64.tar.gz
 tar xf doctl-"$DOCTL_VERSION"-linux-amd64.tar.gz
 sudo mv ~/doctl /usr/local/bin
 rm doctl-"$DOCTL_VERSION"-linux-amd64.tar.gz
 
 JFROG_VERSION=1.19.1
-echo "================= Adding jfrog-cli $JFROG_VERSION  ==================="
+echo "================= Adding jfrog-cli $JFROG_VERSION  ==============================="
 wget -nv https://api.bintray.com/content/jfrog/jfrog-cli-go/"$JFROG_VERSION"/jfrog-cli-linux-amd64/jfrog?bt_package=jfrog-cli-linux-amd64 -O jfrog
 sudo chmod +x jfrog
 mv jfrog /usr/bin/jfrog
