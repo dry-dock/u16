@@ -16,7 +16,7 @@ rvm requirements
 
 export RVM_VERSION=2.5.1
 echo "================= Installing default ruby ==================="
-rvm reinstall "$RVM_VERSION" --disable-binary
+rvm install "$RVM_VERSION"
 
 # tell rvm to use this version as default
 rvm use "$RVM_VERSION" --default
