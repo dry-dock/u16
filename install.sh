@@ -65,7 +65,7 @@ apt-get update -qq
 apt-get install -y -q git="$GIT_VERSION"
 
 export GITLFS_VERSION=2.5.2
-echo "================= Installing Git LFS $GITLFS_VERSION ================================================="
+echo "================= Installing Git LFS $GITLFS_VERSION =================================="
 curl -sS https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 sudo apt-get install -q git-lfs="$GITLFS_VERSION"
 
@@ -112,7 +112,7 @@ export AWS_VERSION=1.16.24
 echo "================= Adding awscli $AWS_VERSION ========================================"
 sudo pip install awscli=="$AWS_VERSION"
 
-export AWSEBCLI_VERSION=3.14.46
+export AWSEBCLI_VERSION=3.14.6
 echo "================= Adding awsebcli $AWSEBCLI_VERSION ================================"
 sudo pip install awsebcli=="$AWSEBCLI_VERSION"
 
