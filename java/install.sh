@@ -3,7 +3,7 @@
 echo "================ Installing openjdk11-installer ================="
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update
-sudo apt install-y openjdk-11-jdk
+sudo apt install -y openjdk-11-jdk --allow-unauthenticated
 sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-11-openjdk-amd64/bin/java 1
 sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/java-11-openjdk-amd64/bin/javac 1
 sudo update-alternatives --set java /usr/lib/jvm/java-11-openjdk-amd64/bin/java
