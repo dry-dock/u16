@@ -59,14 +59,15 @@ pip install -q virtualenv==16.0.0
 pip install -q pyOpenSSL==18.0.0
 
 export GIT_VERSION=1:2.*
-echo "================= Installing Git $GIT_VERSION ===================================="
+echo "================= Installing Git $GIT_VERSION ======================================="
 add-apt-repository ppa:git-core/ppa -y
 apt-get update -qq
 apt-get install -y -q git="$GIT_VERSION"
 
-echo "================= Installing Git LFS ================================================="
+export GITLFS_VERSION=2.5.2
+echo "================= Installing Git LFS $GITLFS_VERSION ================================================="
 curl -sS https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-sudo apt-get install -q git-lfs=2.5.2
+sudo apt-get install -q git-lfs="$GITLFS_VERSION"
 
 export JQ_VERSION=1.5*
 echo "================= Adding JQ $JQ_VERSION ==============================================="
