@@ -5,6 +5,11 @@ sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update
 sudo apt install -y openjdk-11-jdk --allow-unauthenticated
 
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-11-openjdk-amd64/bin/java 1
+sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/java-11-openjdk-amd64/bin/javac 1
+sudo update-alternatives --set java /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+sudo update-alternatives --set javac /usr/lib/jvm/java-11-openjdk-amd64/bin/javac
+
 echo "================ Installing oracle-java11-installer ================="
 export ORACLEJDK_VERSION=11
 mkdir -p /usr/lib/jvm && cd /usr/lib/jvm
@@ -13,6 +18,8 @@ tar -xzf jdk-"$ORACLEJDK_VERSION"_linux-x64_bin.tar.gz
 mv jdk-"$ORACLEJDK_VERSION"/ java-11-oraclejdk-amd64
 echo 'export JAVA_HOME=/usr/lib/jvm/java-11-oraclejdk-amd64' >> /etc/drydock/.env
 echo 'export PATH=$PATH:/usr/lib/jvm/java-11-oraclejdk-amd64/bin' >> /etc/drydock/.env
+
+sudo update-alternatives --set javac /usr/java/java-11-oraclejdk-amd64/bin/javac
 
 
 
