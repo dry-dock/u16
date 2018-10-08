@@ -17,8 +17,6 @@ echo 'export PATH=$PATH:/usr/lib/jvm/java-11-oraclejdk-amd64/bin' >> /etc/drydoc
 
 sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-11-oraclejdk-amd64/bin/java 1
 sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/java-11-oraclejdk-amd64/bin/javac 1
-sudo update-alternatives --set java /usr/lib/jvm/java-11-oraclejdk-amd64/bin/java
-sudo update-alternatives --set javac /usr/lib/jvm/java-11-oraclejdk-amd64/bin/javac
 
 
 
