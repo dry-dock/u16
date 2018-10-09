@@ -12,8 +12,8 @@ echo 'export PATH=$PATH:/usr/lib/jvm/java-"$ORACLEJDK_VERSION"-oraclejdk-amd64/b
 sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-"$ORACLEJDK_VERSION"-oraclejdk-amd64/bin/java 1
 sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/java-"$ORACLEJDK_VERSION"-oraclejdk-amd64/bin/javac 1
 
-export OPEN_JDK=11
-echo "================ Installing openjdk"$OPEN_JDK"-installer ============================="
+export OPENJDK_VERSION=11
+echo "================ Installing openjdk"$OPENJDK_VERSION"-installer ============================="
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update
-sudo apt install -y openjdk-"$OPEN_JDK"-jdk --allow-unauthenticated
+sudo apt install -y openjdk-"$OPENJDK_VERSION"-jdk --allow-unauthenticated
