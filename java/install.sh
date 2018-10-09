@@ -1,11 +1,5 @@
 #!/bin/bash -e
 
-echo "================ Installing openjdk11-installer ================="
-sudo add-apt-repository ppa:openjdk-r/ppa
-sudo apt-get update
-sudo apt install -y openjdk-11-jdk --allow-unauthenticated
-
-
 echo "================ Installing oracle-java11-installer ================="
 export ORACLEJDK_VERSION=11
 mkdir -p /usr/lib/jvm && cd /usr/lib/jvm
@@ -19,4 +13,7 @@ sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-11-oracl
 sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/java-11-oraclejdk-amd64/bin/javac 1
 
 
-
+echo "================ Installing openjdk11-installer ================="
+sudo add-apt-repository ppa:openjdk-r/ppa
+sudo apt-get update
+sudo apt install -y openjdk-11-jdk --allow-unauthenticated
