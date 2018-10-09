@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 export ORACLEJDK_VERSION=11
-echo "================ Installing oracle-java$ORACLEJDK_VERSION-installer ================="
+echo "================ Installing oracle-java"$ORACLEJDK_VERSION"-installer ================="
 mkdir -p /usr/lib/jvm && cd /usr/lib/jvm
 wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/11+28/55eed80b163941c8885ad9298e6d786a/jdk-"$ORACLEJDK_VERSION"_linux-x64_bin.tar.gz
 tar -xzf jdk-"$ORACLEJDK_VERSION"_linux-x64_bin.tar.gz
@@ -13,7 +13,7 @@ sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-"$ORACLE
 sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/java-"$ORACLEJDK_VERSION"-oraclejdk-amd64/bin/javac 1
 
 export OPEN_JDK=11
-echo "================ Installing openjdk$OPEN_JDK-installer ================="
+echo "================ Installing openjdk"$OPEN_JDK"-installer ============================="
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update
 sudo apt install -y openjdk-"$OPEN_JDK"-jdk --allow-unauthenticated
