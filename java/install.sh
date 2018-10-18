@@ -1,9 +1,9 @@
 #!/bin/bash -e
 
-export ORACLEJDK_VERSION=11
+export ORACLEJDK_VERSION=11.0.1
 echo "================ Installing oracle-java"$ORACLEJDK_VERSION"-installer ================="
 mkdir -p /usr/lib/jvm && cd /usr/lib/jvm
-wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/11+28/55eed80b163941c8885ad9298e6d786a/jdk-"$ORACLEJDK_VERSION"_linux-x64_bin.tar.gz
+wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/11.0.1+13/90cf5d8f270a4347a95050320eef3fb7/jdk-"$ORACLEJDK_VERSION"_linux-x64_bin.tar.gz
 tar -xzf jdk-"$ORACLEJDK_VERSION"_linux-x64_bin.tar.gz
 mv jdk-"$ORACLEJDK_VERSION"/ java-"$ORACLEJDK_VERSION"-oraclejdk-amd64
 echo "export JAVA_HOME=/usr/lib/jvm/java-"$ORACLEJDK_VERSION"-oraclejdk-amd64" >> /etc/drydock/.env
