@@ -14,7 +14,6 @@ echo "export PATH=\$PATH:/usr/lib/jvm/java-${JAVA_VERSION}-oraclejdk-amd64/bin" 
 sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-"$JAVA_VERSION"-oraclejdk-amd64/bin/java 1
 sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/java-"$JAVA_VERSION"-oraclejdk-amd64/bin/javac 1
 
-
 echo "================ Installing openjdk"$JAVA_VERSION"-installer ============================="
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update
