@@ -134,7 +134,7 @@ sudo apt-get update && sudo apt-get install -y -q azure-cli=$AZURE_CLI_VERSION
 
 export DOCTL_VERSION=1.11.0
 echo "================= Adding doctl $DOCTL_VERSION ====================================="
-curl -OL https://github.com/digitalocean/doctl/releases/download/v1.11.0/doctl-1.11.0-linux-amd64.tar.gz
+curl -OL https://github.com/digitalocean/doctl/releases/download/v"$DOCTL_VERSION"/doctl-"$DOCTL_VERSION"-linux-amd64.tar.gz
 tar xf doctl-"$DOCTL_VERSION"-linux-amd64.tar.gz
 sudo mv ~/doctl /usr/local/bin
 rm doctl-"$DOCTL_VERSION"-linux-amd64.tar.gz
