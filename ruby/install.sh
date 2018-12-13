@@ -8,7 +8,7 @@ cd /root
 curl -sSL https://rvm.io/mpapis.asc | sudo gpg --import -
 
 echo "================= Installing RVM ==================="
-curl -sSL https://get.rvm.io | bash -s stable
+curl -sSL https://get.rvm.io | bash
 
 # Set source to rvm
 source /usr/local/rvm/scripts/rvm
